@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using CadastroFornecedores.Models;
-using CadastroFornecedores.Repositories.Interfaces;
-using CadastroFornecedores.Services.Interfaces;
-using CadastroFornecedores.ViewModels;
+using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Services.Interfaces;
+using CadastroDeFornecedoresApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroDeFornecedoresApi.Controllers

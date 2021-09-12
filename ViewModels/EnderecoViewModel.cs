@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CadastroFornecedores.ViewModels
+namespace CadastroDeFornecedoresApi.ViewModels
 {
     public class EnderecoViewModel
     {

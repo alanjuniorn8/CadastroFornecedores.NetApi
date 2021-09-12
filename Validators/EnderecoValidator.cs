@@ -1,7 +1,7 @@
-﻿using CadastroFornecedores.Models;
+﻿using CadastroDeFornecedoresApi.Models;
 using FluentValidation;
 
-namespace CadastroFornecedores.Validators
+namespace CadastroDeFornecedoresApi.Validators
 {
     public class EnderecoValidator : AbstractValidator<Endereco>
     {

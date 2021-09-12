@@ -1,4 +1,4 @@
-﻿using CadastroFornecedores.Data;
+﻿using CadastroDeFornecedoresApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

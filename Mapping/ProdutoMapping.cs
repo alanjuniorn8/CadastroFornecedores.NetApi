@@ -1,8 +1,8 @@
-using CadastroFornecedores.Models;
+using CadastroDeFornecedoresApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CadastroFornecedores.Mapping
+namespace CadastroDeFornecedoresApi.Mapping
 {
     public class ProdutoMapping : IEntityTypeConfiguration<Produto>
     {

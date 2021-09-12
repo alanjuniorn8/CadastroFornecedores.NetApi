@@ -1,8 +1,8 @@
-﻿using CadastroFornecedores.Models;
-using CadastroFornecedores.Validators.Documentos;
+﻿using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Validators.Documentos;
 using FluentValidation;
 
-namespace CadastroFornecedores.Validators
+namespace CadastroDeFornecedoresApi.Validators
 {
     public class FornecedorValidator : AbstractValidator<Fornecedor>
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace CadastroFornecedores.Models
+namespace CadastroDeFornecedoresApi.Models
 {
     public class ErrorViewModel
     {   

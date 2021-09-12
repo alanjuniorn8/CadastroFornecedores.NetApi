@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CadastroFornecedores.Notificacoes
+namespace CadastroDeFornecedoresApi.Notificacoes
 {
     public class Notificador : INotificador
     {

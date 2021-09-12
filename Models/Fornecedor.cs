@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace CadastroFornecedores.Models
+namespace CadastroDeFornecedoresApi.Models
 {
     public class Fornecedor : Entity
     {

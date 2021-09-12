@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CadastroFornecedores.Models;
+using CadastroDeFornecedoresApi.Models;
 
-namespace CadastroFornecedores.Repositories.Interfaces
+namespace CadastroDeFornecedoresApi.Repositories.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {

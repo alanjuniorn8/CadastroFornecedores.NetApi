@@ -1,8 +1,8 @@
-﻿using CadastroFornecedores.Models;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using CadastroDeFornecedoresApi.Models;
 
-namespace CadastroFornecedores.Services.Interfaces
+namespace CadastroDeFornecedoresApi.Services.Interfaces
 {
     public interface IProdutoService : IDisposable
     {

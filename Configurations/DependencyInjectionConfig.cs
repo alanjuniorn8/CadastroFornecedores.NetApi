@@ -1,6 +1,8 @@
-using CadastroFornecedores.Data;
-using CadastroFornecedores.Repositories;
-using CadastroFornecedores.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Data;
+using CadastroDeFornecedoresApi.Repositories;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Services;
+using CadastroDeFornecedoresApi.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CadastroDeFornecedoresApi.Configurations
@@ -12,6 +14,7 @@ namespace CadastroDeFornecedoresApi.Configurations
 
             services.AddScoped<ApplicationDbContext>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
             
             return services;
         }

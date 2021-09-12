@@ -1,4 +1,4 @@
-namespace CadastroFornecedores.Models
+namespace CadastroDeFornecedoresApi.Models
 {
     public enum TipoFornecedor
     {

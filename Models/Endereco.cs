@@ -1,8 +1,7 @@
 
 using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace CadastroFornecedores.Models
+namespace CadastroDeFornecedoresApi.Models
 {
     public class Endereco : Entity
     {

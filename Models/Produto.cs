@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CadastroFornecedores.Models
+namespace CadastroDeFornecedoresApi.Models
 {
     public class Produto : Entity
     {

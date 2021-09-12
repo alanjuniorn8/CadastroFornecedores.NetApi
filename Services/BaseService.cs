@@ -1,9 +1,9 @@
-﻿using CadastroFornecedores.Models;
-using CadastroFornecedores.Notificacoes;
+﻿using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Notificacoes;
 using FluentValidation;
 using FluentValidation.Results;
 
-namespace CadastroFornecedores.Services
+namespace CadastroDeFornecedoresApi.Services
 {
     public abstract class BaseService
     {

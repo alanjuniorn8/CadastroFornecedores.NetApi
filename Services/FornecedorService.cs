@@ -1,13 +1,13 @@
-﻿using CadastroFornecedores.Models;
-using CadastroFornecedores.Notificacoes;
-using CadastroFornecedores.Repositories.Interfaces;
-using CadastroFornecedores.Services.Interfaces;
-using CadastroFornecedores.Validators;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Notificacoes;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Services.Interfaces;
+using CadastroDeFornecedoresApi.Validators;
 
-namespace CadastroFornecedores.Services
+namespace CadastroDeFornecedoresApi.Services
 {
     public class FornecedorService : BaseService, IFornecedorService
     {

@@ -1,12 +1,12 @@
-﻿using CadastroFornecedores.Models;
-using CadastroFornecedores.Notificacoes;
-using CadastroFornecedores.Repositories.Interfaces;
-using CadastroFornecedores.Services.Interfaces;
-using CadastroFornecedores.Validators;
+﻿using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Notificacoes;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Services.Interfaces;
+using CadastroDeFornecedoresApi.Validators;
 using System;
 using System.Threading.Tasks;
 
-namespace CadastroFornecedores.Services
+namespace CadastroDeFornecedoresApi.Services
 {
     public class ProdutoService : BaseService, IProdutoService
     {

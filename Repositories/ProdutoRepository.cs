@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CadastroFornecedores.Data;
-using CadastroFornecedores.Models;
-using CadastroFornecedores.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Data;
+using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace CadastroFornecedores.Repositories
+namespace CadastroDeFornecedoresApi.Repositories
 {
 
     public class ProdutoRepository : Repository<Produto>, IProdutoRepository

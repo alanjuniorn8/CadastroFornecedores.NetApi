@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CadastroFornecedores.Models;
+using CadastroDeFornecedoresApi.Models;
 
-namespace CadastroFornecedores.Repositories.Interfaces
+namespace CadastroDeFornecedoresApi.Repositories.Interfaces
 {
     public interface IProdutoRepository : IRepository<Produto>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CadastroFornecedores.Validators.Documentos
+namespace CadastroDeFornecedoresApi.Validators.Documentos
 {
     public class CpfValidator
     {

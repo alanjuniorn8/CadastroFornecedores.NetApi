@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
-using CadastroFornecedores.Models;
+using CadastroDeFornecedoresApi.Models;
 
-namespace CadastroFornecedores.Repositories.Interfaces
+namespace CadastroDeFornecedoresApi.Repositories.Interfaces
 {
     public interface IFornecedorRepository : IRepository<Fornecedor>
     {

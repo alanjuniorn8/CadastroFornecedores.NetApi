@@ -1,8 +1,8 @@
 using AutoMapper;
-using CadastroFornecedores.Models;
-using CadastroFornecedores.ViewModels;
+using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.ViewModels;
 
-namespace CadastroFornecedores.AutoMApper
+namespace CadastroDeFornecedoresApi.AutoMApper
 {
     public class AutoMapperConfig : Profile
     {   

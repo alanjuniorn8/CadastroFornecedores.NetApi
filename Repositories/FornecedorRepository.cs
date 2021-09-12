@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using CadastroFornecedores.Data;
-using CadastroFornecedores.Models;
-using CadastroFornecedores.Repositories.Interfaces;
+using CadastroDeFornecedoresApi.Data;
+using CadastroDeFornecedoresApi.Models;
+using CadastroDeFornecedoresApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace CadastroFornecedores.Repositories
+namespace CadastroDeFornecedoresApi.Repositories
 {
 
     public class FornecedorRepository : Repository<Fornecedor>, IFornecedorRepository

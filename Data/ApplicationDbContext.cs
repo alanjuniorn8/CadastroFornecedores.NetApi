@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using CadastroFornecedores.Models;
+using CadastroDeFornecedoresApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CadastroFornecedores.Data
+namespace CadastroDeFornecedoresApi.Data
 {
     public class ApplicationDbContext : DbContext
     {

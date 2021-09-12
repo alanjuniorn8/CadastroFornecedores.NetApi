@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace CadastroFornecedores.ViewModels
+namespace CadastroDeFornecedoresApi.ViewModels
 {
     public class ProdutoViewModel
     {
