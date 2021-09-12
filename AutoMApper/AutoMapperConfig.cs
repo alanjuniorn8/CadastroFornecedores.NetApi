@@ -10,8 +10,12 @@ namespace CadastroDeFornecedoresApi.AutoMApper
         public AutoMapperConfig()
         {
             CreateMap<Fornecedor, FornecedorViewModel>().ReverseMap();
-            CreateMap<Produto, ProdutoViewModel>().ReverseMap();
             CreateMap<Endereco, EnderecoViewModel>().ReverseMap();
+
+            CreateMap<ProdutoViewModel, Produto>();
+            CreateMap<Produto, ProdutoViewModel>()
+            .ForMember(dest => dest.NomeFornecedor, 
+                        opt => opt.MapFrom(src => src.Fornecedor.Nome ));
         }
         
     }
