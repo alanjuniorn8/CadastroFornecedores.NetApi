@@ -22,31 +22,33 @@ namespace CadastroFornecedores.Services
             _enderecoRepository = enderecoRepository;
         }
 
-        public async Task Adicionar(Fornecedor fornecedor)
+        public async Task<bool> Adicionar(Fornecedor fornecedor)
         {
             if (!ExecutarValidacao(new FornecedorValidator(), fornecedor)
-                 || !ExecutarValidacao(new EnderecoValidator(), fornecedor.Endereco)) return;
+                 || !ExecutarValidacao(new EnderecoValidator(), fornecedor.Endereco)) return false;
 
             if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any())
             {
                 Notificar("Já existe um fornecedor cadastrado com este documento.");
-                return;
+                return false;
             }
 
             await _fornecedorRepository.Adicionar(fornecedor);
+            return true;
         }
 
-        public async Task Atualizar(Fornecedor fornecedor)
+        public async Task<bool> Atualizar(Fornecedor fornecedor)
         {
-            if (!ExecutarValidacao(new FornecedorValidator(), fornecedor)) return;
+            if (!ExecutarValidacao(new FornecedorValidator(), fornecedor)) return false;
 
             if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento && f.Id != fornecedor.Id).Result.Any())
             {
                 Notificar("Já existe um fornecedor cadastrado com este documento.");
-                return;
+                return false;
             }
 
             await _fornecedorRepository.Atualizar(fornecedor);
+            return true;
         }
 
         public async Task AtualizarEndereco(Endereco endereco)
@@ -56,18 +58,19 @@ namespace CadastroFornecedores.Services
             await _enderecoRepository.Atualizar(endereco);
         }
 
-        public async Task Remover(Guid id)
+        public async Task<bool> Remover(Guid id)
         {
             if (_fornecedorRepository.ObterFornecedorProdutosEndereco(id).Result.Produtos.Any())
             {
                 Notificar("O fornecedor possui produtos cadastrados!");
-                return;
+                return false;
             }
 
             var enderecoFornecedor = await _enderecoRepository.ObterEnderecoPorFornecedor(id);
             
             await _enderecoRepository.Remover(enderecoFornecedor.Id);
             await _fornecedorRepository.Remover(id);
+            return true;
         }
 
         public void Dispose()
