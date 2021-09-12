@@ -1,5 +1,6 @@
 ﻿using CadastroDeFornecedoresApi.Models;
 using CadastroDeFornecedoresApi.Notificacoes;
+using CadastroDeFornecedoresApi.Notificacoes.Interfaces;
 using FluentValidation;
 using FluentValidation.Results;
 

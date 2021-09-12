@@ -7,6 +7,8 @@ using CadastroDeFornecedoresApi.Repositories.Interfaces;
 using CadastroDeFornecedoresApi.Services.Interfaces;
 using CadastroDeFornecedoresApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using CadastroDeFornecedoresApi.Notificacoes.Interfaces;
+ 
 
 namespace CadastroDeFornecedoresApi.Controllers
 {
@@ -19,7 +21,8 @@ namespace CadastroDeFornecedoresApi.Controllers
 
         public FornecedoresController(IMapper mapper, 
                                         IFornecedorRepository fornecedorRepository,
-                                        IFornecedorService fornecedorService)
+                                        IFornecedorService fornecedorService,
+                                        INotificador notificador) : base(notificador)
         {
             _fornecedorRepository = fornecedorRepository;
             _fornecedorService = fornecedorService;
@@ -47,15 +50,12 @@ namespace CadastroDeFornecedoresApi.Controllers
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
-            if(!ModelState.IsValid) return BadRequest();
+            if(!ModelState.IsValid) return CustomResponse(ModelState);
 
             var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+            await _fornecedorService.Adicionar(fornecedor);
 
-            var result = await _fornecedorService.Adicionar(fornecedor);
-
-            if (!result) return BadRequest();
-
-            return Ok(fornecedor);
+            return CustomResponse(fornecedorViewModel);
         }
 
         [HttpPut("{id:guid}")]
@@ -63,15 +63,14 @@ namespace CadastroDeFornecedoresApi.Controllers
         {
 
             if(id != fornecedorViewModel.Id) return BadRequest();
-            if(!ModelState.IsValid) return BadRequest();
+            
+            
+            if(!ModelState.IsValid) return CustomResponse(ModelState);
 
             var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+            await _fornecedorService.Atualizar(fornecedor);
 
-            var result = await _fornecedorService.Atualizar(fornecedor);
-
-            if (!result) return BadRequest();
-
-            return Ok(fornecedor);
+            return CustomResponse(fornecedorViewModel);
         }
 
         [HttpDelete("{id:guid}")]
@@ -81,12 +80,10 @@ namespace CadastroDeFornecedoresApi.Controllers
             var fornecedorViewModel = await ObterFornecedorEndereco(id);
 
             if(fornecedorViewModel == null) return NotFound();
+            
+            await _fornecedorService.Remover(id);
 
-            var result = await _fornecedorService.Remover(id);
-
-            if (!result) return BadRequest();
-
-            return Ok(fornecedorViewModel);
+            return CustomResponse();
 
         }
 

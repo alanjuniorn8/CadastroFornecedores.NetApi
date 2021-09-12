@@ -1,5 +1,5 @@
 ﻿using CadastroDeFornecedoresApi.Models;
-using CadastroDeFornecedoresApi.Notificacoes;
+using CadastroDeFornecedoresApi.Notificacoes.Interfaces;
 using CadastroDeFornecedoresApi.Repositories.Interfaces;
 using CadastroDeFornecedoresApi.Services.Interfaces;
 using CadastroDeFornecedoresApi.Validators;

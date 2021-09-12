@@ -1,4 +1,6 @@
 using CadastroDeFornecedoresApi.Data;
+using CadastroDeFornecedoresApi.Notificacoes;
+using CadastroDeFornecedoresApi.Notificacoes.Interfaces;
 using CadastroDeFornecedoresApi.Repositories;
 using CadastroDeFornecedoresApi.Repositories.Interfaces;
 using CadastroDeFornecedoresApi.Services;
@@ -14,7 +16,12 @@ namespace CadastroDeFornecedoresApi.Configurations
 
             services.AddScoped<ApplicationDbContext>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
+            services.AddScoped<INotificador, Notificador>();
             services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
             
             return services;
         }
