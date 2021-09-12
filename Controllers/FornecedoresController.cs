@@ -17,15 +17,18 @@ namespace CadastroDeFornecedoresApi.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IFornecedorRepository _fornecedorRepository;
+        private readonly IEnderecoRepository _enderecoRepository;
         private readonly IFornecedorService _fornecedorService;
 
         public FornecedoresController(IMapper mapper, 
                                         IFornecedorRepository fornecedorRepository,
+                                        IEnderecoRepository enderecoRepository,
                                         IFornecedorService fornecedorService,
                                         INotificador notificador) : base(notificador)
         {
             _fornecedorRepository = fornecedorRepository;
             _fornecedorService = fornecedorService;
+            _enderecoRepository = enderecoRepository;
             _mapper = mapper;
         }
 
@@ -73,6 +76,7 @@ namespace CadastroDeFornecedoresApi.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
+
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Excluir(Guid id)
         {
@@ -85,6 +89,30 @@ namespace CadastroDeFornecedoresApi.Controllers
 
             return CustomResponse();
 
+        }
+
+        [HttpGet("endereco/{id:guid}")]
+        public async Task<ActionResult<EnderecoViewModel>> ObterEnderecoPorId(Guid id)
+        {
+
+            var endereco = _mapper.Map<EnderecoViewModel>(await _enderecoRepository.ObterPorId(id));
+
+            return Ok(endereco);
+        }
+
+        [HttpPut("endereco/{id:guid}")]
+        public async Task<ActionResult<EnderecoViewModel>> AtualizarEndereco(Guid id, EnderecoViewModel enderecoViewModel)
+        {
+
+            if(id != enderecoViewModel.Id) return BadRequest();
+            
+            
+            if(!ModelState.IsValid) return CustomResponse(ModelState);
+
+            var endereco = _mapper.Map<Endereco>(enderecoViewModel);
+            await _fornecedorService.AtualizarEndereco(endereco);
+
+            return CustomResponse(enderecoViewModel);
         }
 
 
