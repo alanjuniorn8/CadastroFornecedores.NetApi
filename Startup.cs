@@ -23,18 +23,7 @@ namespace CadastroDeFornecedoresApi
         {   
             services.AddDbContextConfig(Configuration);
 
-            services.AddAutoMapper(typeof(Startup));
-
-            services.AddControllers();
-
-            services.Configure<ApiBehaviorOptions>(options =>
-                options.SuppressModelStateInvalidFilter = true
-            );
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CadastroDeFornecedoresApi", Version = "v1" });
-            });
+            services.AddConfigurations();
 
             services.ResolveDependecies();
         }
@@ -49,16 +38,7 @@ namespace CadastroDeFornecedoresApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CadastroDeFornecedoresApi v1"));
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.useConfigurations();
 
         }
     }
