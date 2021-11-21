@@ -64,7 +64,7 @@ namespace CadastroDeFornecedoresApi.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<ProdutoViewModel>> Atualiza(Guid id, ProdutoViewModel produtoViewModel)
+        public async Task<ActionResult<ProdutoViewModel>> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
 
             if (id != produtoViewModel.Id) return BadRequest();

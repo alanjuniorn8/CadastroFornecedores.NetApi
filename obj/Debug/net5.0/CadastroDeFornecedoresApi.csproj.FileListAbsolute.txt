@@ -33,7 +33,6 @@
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/staticwebassets/CadastroDeFornecedoresApi.StaticWebAssets.xml
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/scopedcss/bundle/CadastroDeFornecedoresApi.styles.css
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/CadastroDeFornecedoresApi.RazorTargetAssemblyInfo.cache
-/home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/CadastroDeFornecedoresApi.csproj.CopyComplete
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/CadastroDeFornecedoresApi.dll
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/ref/CadastroDeFornecedoresApi.dll
 /home/alan/VScode-workspace/ApiDotNet/CadastroDeFornecedoresApi/obj/Debug/net5.0/CadastroDeFornecedoresApi.pdb
