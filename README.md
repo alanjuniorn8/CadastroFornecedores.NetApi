@@ -9,7 +9,7 @@
 ### 🚧 Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina o framework [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
-Além disto é necessário ter configurado um database MySql[MySql](https://www.mysql.com/)
+Além disto é necessário ter configurado um database [MySql](https://www.mysql.com/)
 
 ### 🎲 Rodando a aplicação
 
