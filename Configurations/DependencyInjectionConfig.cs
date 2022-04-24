@@ -9,9 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CadastroDeFornecedoresApi.Configurations
 {
-    public static class DependencyInjectionConfig
+    public static class DependencyInjectionConfig 
     {
-        public static Microsoft.Extensions.DependencyInjection.IServiceCollection ResolveDependecies(this IServiceCollection services)
+        public static IServiceCollection ResolveDependecies(this IServiceCollection services)
         {
 
             services.AddScoped<ApplicationDbContext>();

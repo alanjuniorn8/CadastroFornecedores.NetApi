@@ -63,7 +63,7 @@ namespace CadastroDeFornecedoresApi.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPut("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
 

@@ -8,10 +8,12 @@ using CadastroDeFornecedoresApi.Services.Interfaces;
 using CadastroDeFornecedoresApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using CadastroDeFornecedoresApi.Notificacoes.Interfaces;
- 
+using Microsoft.AspNetCore.Authorization;
+using CadastroDeFornecedoresApi.Extensions;
 
 namespace CadastroDeFornecedoresApi.Controllers
 {
+    [Authorize]
     [Route("api/fornecedores")]
     public class FornecedoresController : MainController
     {
@@ -32,6 +34,7 @@ namespace CadastroDeFornecedoresApi.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FornecedorViewModel>>> ObterTodos()
         {
@@ -49,7 +52,7 @@ namespace CadastroDeFornecedoresApi.Controllers
             return Ok(fornecedor);
         }
         
-
+        [ClaimAuthorize("Fornecedor", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
@@ -61,6 +64,8 @@ namespace CadastroDeFornecedoresApi.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
+           
+        [ClaimAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
@@ -76,7 +81,7 @@ namespace CadastroDeFornecedoresApi.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
-
+        [ClaimAuthorizeAttribute("Fornecedor", "Remover")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Excluir(Guid id)
         {
@@ -91,6 +96,7 @@ namespace CadastroDeFornecedoresApi.Controllers
 
         }
 
+        [ClaimAuthorizeAttribute("Fornecedor", "Remover")]
         [HttpGet("endereco/{id:guid}")]
         public async Task<ActionResult<EnderecoViewModel>> ObterEnderecoPorId(Guid id)
         {
@@ -100,6 +106,7 @@ namespace CadastroDeFornecedoresApi.Controllers
             return Ok(endereco);
         }
 
+        [ClaimAuthorizeAttribute("Fornecedor", "Atualizar")]
         [HttpPut("endereco/{id:guid}")]
         public async Task<ActionResult<EnderecoViewModel>> AtualizarEndereco(Guid id, EnderecoViewModel enderecoViewModel)
         {
